@@ -1,15 +1,15 @@
 class EntriesController < ApplicationController
 
   def index
-    render :index
+    # render :index
   end
 
   def show
-    @entry = Entry.find_by(params[:id])
+    # @entry = Entry.find_by(params[:id])
   end
 
   def new
-    render :new
+    # render :new
   end
 
   def create
@@ -17,7 +17,8 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    render :edit
+    # render :edit
+    @entry = Entry.find_by(id: params[:id])
   end
 
   def update
