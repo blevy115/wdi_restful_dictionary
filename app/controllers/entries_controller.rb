@@ -28,10 +28,21 @@ class EntriesController < ApplicationController
   def edit
     # render :edit
     @entry = Entry.find_by(id: params[:id])
+
   end
 
   def update
-    redirect_to entry_url(params[:id])
+    @entry = Entry.find(params[:id])
+
+    @entry.word = params[:entry][:word]
+    @entry.definition = params[:entry][:definition]
+    @entry.language = params[:entry][:language]
+
+    if @entry.save
+      redirect_to entries_url
+    else
+      redirect_to new_entry_url
+    end
   end
 
   def destroy

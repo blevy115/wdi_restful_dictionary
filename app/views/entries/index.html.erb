@@ -6,5 +6,6 @@
 <% @entry.each do |entry| %>
   <%=entry.word %>
   <%= link_to('Word', entry_path(entry)) %>
+  <%= link_to('Edit', edit_entry_path(entry)) %>
   <br>
 <%end %>
