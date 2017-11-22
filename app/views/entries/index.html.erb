@@ -1,1 +1,10 @@
 <p>This is the entries index page</p>
+
+<%= link_to('New Word', new_entry_path) %>
+<br>
+<br>
+<% @entry.each do |entry| %>
+  <%=entry.word %>
+  <%= link_to('Word', entry_path(entry)) %>
+  <br>
+<%end %>
