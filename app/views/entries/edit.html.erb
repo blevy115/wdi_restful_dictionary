@@ -1,3 +1,5 @@
 <p>Edit entry <%=@entry.id%><p>
 
 <%= render 'entry_form', entry: @entry %>
+
+<p><%= link_to "Delete Entry", entry_path(@entry), method: :delete %></p>
