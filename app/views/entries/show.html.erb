@@ -3,3 +3,4 @@
 <p> Definition is: <%=@entry.definition%></p>
 <p> Lamnguage is : <%= @entry.language %></p>
 <p><%= link_to "Dictionary", entries_path %>
+<p>  <%= link_to 'Delete Entry', entry_path(@entry), method: :delete, data: {confirm: "Are you sure you want to delete the word '#{@entry.word}'? This cannot be undone!"} %></p>
